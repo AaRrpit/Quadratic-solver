@@ -3,33 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quadratic Solver</title>
+    <title>Quadratic Equation Solver</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+
+    <div class="glass-card">
         <h1>Quadratic Solver</h1>
-        <p>Solve for $ax^2 + bx + c = 0$</p>
-        
-        <div class="input-group">
-            <input type="number" id="a" placeholder="a" required>
-            <input type="number" id="b" placeholder="b" required>
-            <input type="number" id="c" placeholder="c" required>
+        <p class="subtitle">Enter values for: ax² + bx + c = 0</p>
+
+        <div class="input-container">
+            <div class="input-box">
+                <label>Value of a</label>
+                <input type="number" id="a" placeholder="0" required>
+            </div>
+            <div class="input-box">
+                <label>Value of b</label>
+                <input type="number" id="b" placeholder="0" required>
+            </div>
+            <div class="input-box">
+                <label>Value of c</label>
+                <input type="number" id="c" placeholder="0" required>
+            </div>
         </div>
 
-        <button onclick="startCalculation()">Calculate Roots</button>
+        <div class="action-buttons">
+            <button class="btn-calc" onclick="handleSolve()">Solve Equation</button>
+            <button class="btn-reset" onclick="resetAll()">Reset</button>
+        </div>
 
         <div id="loader" class="loader hidden">
-            <div class="spinner"></div>
-            <p>Processing Math...</p>
+            <div class="orbit"></div>
+            <p>Calculating Roots...</p>
         </div>
 
-        <div id="result-container" class="result hidden">
-            <h3>Results:</h3>
-            <p id="x1"></p>
-            <p id="x2"></p>
+        <div id="results" class="results-box hidden">
+            <h3>Calculated Roots:</h3>
+            <div class="root-display">
+                <p id="root1"></p>
+                <p id="root2"></p>
+            </div>
         </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
